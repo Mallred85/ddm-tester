@@ -14,23 +14,23 @@ export function getStaticPaths() {
         defaultService: 'Lawn Mowing',
         title: 'Lawn Mowing',
         metaTitle: 'Lawn Mowing Service | Herriman, Riverton, South Jordan & Bluffdale | Duck Duck Mow',
-        metaDesc: 'Professional lawn mowing in Herriman, Riverton, South Jordan, and Bluffdale, Utah. Weekly and bi-monthly schedules. Clean, even cuts every visit. Starting at $35.',
+        metaDesc: 'Professional lawn mowing in Herriman, Riverton, South Jordan, and Bluffdale, Utah. Weekly and bi-weekly schedules. Clean, even cuts every visit. Starting at $35.',
         keywords: 'lawn mowing Utah, lawn mowing Herriman, lawn mowing Riverton, lawn mowing South Jordan, lawn mowing Bluffdale, weekly lawn mowing Utah',
         h1: 'Professional Lawn Mowing in South Salt Lake County',
         intro: 'A great mow is the foundation of every healthy, attractive lawn. Duck Duck Mow delivers a clean, precise cut on every visit - no scalping, no rushing, no missed rows.',
         body: [
           'We mow at the correct height for your grass type and adjust as the season changes. In the spring, that means a slightly higher cut to encourage deep root growth. In peak summer, we protect against heat stress. In fall, we prepare your lawn for dormancy.',
-          'Our mowing service covers Herriman, Riverton, South Jordan, and Bluffdale. Whether you need weekly mowing during the growing season or a bi-monthly schedule, we\'ll match the right frequency to your yard\'s needs.',
+          'Our mowing service covers Herriman, Riverton, South Jordan, and Bluffdale. Whether you need weekly mowing during the growing season or a bi-weekly schedule, we\'ll match the right frequency to your yard\'s needs.',
           'Every mow is done with clean equipment. We don\'t cross-contaminate lawns - blades are cleaned between properties. That means no weed seeds or disease transferred from a neighbor\'s yard to yours.',
         ],
         features: [
-          { title: 'Weekly or Bi-Monthly', desc: 'Choose the schedule that fits your lawn\'s growth rate and your budget.' },
+          { title: 'Weekly or Bi-Weekly', desc: 'Choose the schedule that fits your lawn\'s growth rate and your budget.' },
           { title: 'Height Adjusted by Season', desc: 'We don\'t mow at one height all year. We adjust for your grass type and the current conditions.' },
           { title: 'Clean Equipment', desc: 'Blades cleaned between properties to protect your lawn\'s health.' },
           { title: 'Edging Included', desc: 'Mowing alone doesn\'t finish a lawn. Every mow includes edging along all hard surfaces.' },
         ],
         faqs: [
-          { q: 'How often should I have my lawn mowed in Utah?', a: 'During peak growing season (April through September), most Utah lawns benefit from weekly mowing. In spring and fall when growth slows, bi-monthly is often sufficient. We\'ll recommend what we think is right for your specific yard.' },
+          { q: 'How often should I have my lawn mowed in Utah?', a: 'During peak growing season (April through September), most Utah lawns benefit from weekly mowing. In spring and fall when growth slows, bi-weekly is often sufficient. We\'ll recommend what we think is right for your specific yard.' },
           { q: 'What height do you cut the grass?', a: 'We mow at 3 to 3.5 inches for most Utah grass types, which is the ideal range for heat resistance and root health. We\'ll never scalp your lawn.' },
           { q: 'Do you mow in straight lines or patterns?', a: 'We vary our mowing direction each visit to prevent ruts and encourage upright grass growth. Your lawn will look professionally maintained, not like a home mow job.' },
           { q: 'Is lawn mowing included with edging and trimming?', a: 'Yes. Mowing, edging, trimming, and blowing are all included on every single visit. There is no à la carte pricing - you always get the full service.' },
@@ -237,7 +237,7 @@ const faqSchema = {
             <a href="/#contact" class="btn-primary px-9 py-4 text-base">
               Get a Quote
             </a>
-            <a href={PHONE_HREF} class="btn-secondary px-9 py-4 text-base">
+            <a href={PHONE_HREF} class="rounded-full border-2 border-[#0a1f0c] px-9 py-4 text-base font-black text-[#0a1f0c] hover:bg-[#0a1f0c] hover:text-white transition-all">
               Call {PHONE_DISPLAY}
             </a>
           </div>

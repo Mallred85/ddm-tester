@@ -14,7 +14,7 @@ const NEIGHBORHOODS = ['Herriman', 'Riverton', 'South Jordan', 'Bluffdale'] as c
 const SERVICES      = ['Lawn Mowing', 'Edging', 'Trimming', 'Blowing', 'Seasonal Cleanup'] as const;
 const PLANS         = [
   'Weekly - Starting at $35/visit',
-  'Bi-Monthly - Starting at $45/visit',
+  'Bi-Weekly - Starting at $45/visit',
   'Seasonal Cleanup Only',
   'Not sure yet',
 ] as const;
