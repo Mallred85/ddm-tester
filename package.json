@@ -8,7 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "deploy": "npx wrangler pages deploy dist --project-name=ddm-tester"
+    "deploy": "npx wrangler deploy"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.1",
