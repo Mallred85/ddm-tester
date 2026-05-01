@@ -43,15 +43,15 @@ const services = [
 ];
 ---
 
-<section id="services" class="relative overflow-hidden bg-[#07140c] py-24 text-white sm:py-32">
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_16%_12%,rgba(185,242,74,.22),transparent_25rem),radial-gradient(circle_at_86%_20%,rgba(15,143,58,.28),transparent_31rem),linear-gradient(180deg,#07140c,#0a180f)]"></div>
+<section id="services" class="relative overflow-hidden bg-[#0a1f0c] py-24 text-white sm:py-32">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_16%_12%,rgba(200,230,201,.22),transparent_25rem),radial-gradient(circle_at_86%_20%,rgba(15,143,58,.28),transparent_31rem),linear-gradient(180deg,#0a1f0c,#0a180f)]"></div>
   <div class="absolute inset-0 opacity-[.18]" style="background-image: linear-gradient(115deg, rgba(255,255,255,.14) 1px, transparent 1px); background-size: 54px 54px;"></div>
   <div class="noise-overlay"></div>
 
   <div class="container relative z-10 mx-auto px-4">
     <div class="mb-14 grid grid-cols-1 items-end gap-8 lg:grid-cols-[.9fr_1.1fr]">
       <div class="fade-in">
-        <span class="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-lime-200 backdrop-blur-xl">What we do</span>
+        <span class="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-green-200 backdrop-blur-xl">What we do</span>
         <h2 class="mt-5 max-w-4xl text-4xl font-black leading-[1.08] tracking-[-.035em] text-white sm:text-5xl lg:text-6xl text-balance">The work that makes a yard look finished.</h2>
       </div>
       <div class="fade-in rounded-[2rem] border border-white/12 bg-white/[.08] p-6 shadow-2xl shadow-black/15 backdrop-blur-xl">
@@ -61,24 +61,24 @@ const services = [
 
     <div class="grid grid-cols-1 gap-6 lg:grid-cols-12">
       {services.map((service, index) => (
-        <a href={service.href} class={`fade-in group relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/[.07] shadow-2xl shadow-black/20 backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-lime-200/40 ${index === 0 ? 'lg:col-span-7' : index === 1 ? 'lg:col-span-5' : 'lg:col-span-4'}`}>
+        <a href={service.href} class={`fade-in group relative overflow-hidden rounded-[2rem] border border-white/12 bg-white/[.07] shadow-2xl shadow-black/20 backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-green-200/40 ${index === 0 ? 'lg:col-span-7' : index === 1 ? 'lg:col-span-5' : 'lg:col-span-4'}`}>
           <div class="relative min-h-[24rem] overflow-hidden rounded-[2rem]">
             <img src={service.image} alt={service.title} class="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-110" loading="lazy" />
             <div class="absolute inset-0 bg-gradient-to-t from-[#06130b] via-[#06130b]/74 to-[#06130b]/8"></div>
-            <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(185,242,74,.22),transparent_18rem)] opacity-0 transition duration-500 group-hover:opacity-100"></div>
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(200,230,201,.22),transparent_18rem)] opacity-0 transition duration-500 group-hover:opacity-100"></div>
 
             <div class="absolute right-5 top-5 hidden w-28 overflow-hidden rounded-[1.25rem] border border-white/20 bg-white/10 p-1 shadow-2xl backdrop-blur-xl sm:block">
               <img src={service.accent} alt={`${service.title} detail`} class="h-24 w-full rounded-[1rem] object-cover transition duration-700 group-hover:scale-110" loading="lazy" />
             </div>
 
-            <div class="absolute left-5 top-5 rounded-full border border-white/18 bg-white/12 px-4 py-2 text-xs font-black uppercase tracking-[.16em] text-lime-100 backdrop-blur-xl">
+            <div class="absolute left-5 top-5 rounded-full border border-white/18 bg-white/12 px-4 py-2 text-xs font-black uppercase tracking-[.16em] text-green-100 backdrop-blur-xl">
               {service.eyebrow}
             </div>
 
             <div class="absolute bottom-0 left-0 right-0 p-6 sm:p-7">
               <h3 class="text-3xl font-black tracking-[-.03em] text-white sm:text-4xl">{service.title}</h3>
               <p class="mt-3 max-w-xl text-base leading-7 text-white/78">{service.desc}</p>
-              <span class="mt-6 inline-flex items-center gap-2 rounded-full bg-lime-300 px-5 py-3 text-sm font-black text-[#07140c] shadow-xl shadow-lime-300/10 transition group-hover:bg-white">
+              <span class="mt-6 inline-flex items-center gap-2 rounded-full bg-green-300 px-5 py-3 text-sm font-black text-[#0a1f0c] shadow-xl shadow-lime-300/10 transition group-hover:bg-white">
                 View service
                 <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
               </span>

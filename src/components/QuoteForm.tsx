@@ -98,7 +98,7 @@ export default function QuoteForm({ endpoint, showPlanSelector = false, defaultN
           </svg>
         </div>
         <h3 className="text-2xl font-extrabold text-gray-900 mb-3">Quote Request Sent!</h3>
-        <p className="text-[#35483b] mb-6 max-w-sm mx-auto">
+        <p className="text-[#3e2723] mb-6 max-w-sm mx-auto">
           Thanks! We've received your request and will reach out shortly.
           You can also text us directly.
         </p>

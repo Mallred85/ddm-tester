@@ -21,32 +21,32 @@ const posts = await getAllPosts();
   <main class="pt-16 lg:pt-20">
 
     <!-- Hero -->
-    <section class="py-16 sm:py-20 bg-gradient-to-br from-[#fffaf0] via-[#f6efdf] to-[#eaf6da]">
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-[#f8f5f0] via-[#f0e9e0] to-[#e8f5e9]">
       <div class="container mx-auto px-4 text-center fade-in">
-        <p class="mb-3 font-black text-[#123b20] text-xs uppercase tracking-[.18em]">Lawn Care Tips</p>
-        <h1 class="font-display text-4xl sm:text-5xl font-black text-[#07140c] mb-4 tracking-tight">
+        <p class="mb-3 font-black text-[#1b5e20] text-xs uppercase tracking-[.18em]">Lawn Care Tips</p>
+        <h1 class="font-display text-4xl sm:text-5xl font-black text-[#0a1f0c] mb-4 tracking-tight">
           The Duck Duck Mow Blog
         </h1>
-        <p class="text-lg text-[#35483b] max-w-2xl mx-auto">
+        <p class="text-lg text-[#3e2723] max-w-2xl mx-auto">
           Practical lawn care advice for homeowners in Herriman, Riverton, South Jordan & Bluffdale.
         </p>
       </div>
     </section>
 
     <!-- Posts grid -->
-    <section class="py-16 sm:py-20 bg-[#fffaf0]">
+    <section class="py-16 sm:py-20 bg-[#f8f5f0]">
       <div class="container mx-auto px-4 max-w-7xl">
         {posts.length === 0 ? (
           <div class="text-center py-20 fade-in">
             <p class="text-gray-400 text-lg">No posts yet - check back soon!</p>
-            <a href="/" class="mt-4 inline-flex items-center gap-2 text-[#123b20] font-semibold hover:underline">
+            <a href="/" class="mt-4 inline-flex items-center gap-2 text-[#1b5e20] font-semibold hover:underline">
               Back to Home
             </a>
           </div>
         ) : (
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {posts.map((post) => (
-              <article class="fade-in group border border-[#123b20]/10 bg-white/50 backdrop-blur-sm transition-shadow hover:shadow-md overflow-hidden">
+              <article class="fade-in group border border-[#1b5e20]/10 bg-white/50 backdrop-blur-sm transition-shadow hover:shadow-md overflow-hidden">
 
                 <!-- Cover image -->
                 <a href={`/blog/${post.slug.current}`} class="block overflow-hidden">
@@ -58,7 +58,7 @@ const posts = await getAllPosts();
                       loading="lazy"
                     />
                   ) : (
-                    <div class="h-64 w-full sm:h-72 md:h-80 bg-gradient-to-br from-[#123b20] to-[#49b84a] flex items-center justify-center">
+                    <div class="h-64 w-full sm:h-72 md:h-80 bg-gradient-to-br from-[#1b5e20] to-[#4caf50] flex items-center justify-center">
                       <svg class="w-16 h-16 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
@@ -68,17 +68,17 @@ const posts = await getAllPosts();
 
                 <!-- Category tag -->
                 <div class="px-4 pt-3 sm:px-5">
-                  <span class="inline-block bg-[#07140c] text-lime-200 px-2 py-0.5 font-black text-[10px] uppercase tracking-wider sm:px-3 sm:py-1 sm:text-xs">
+                  <span class="inline-block bg-[#0a1f0c] text-green-200 px-2 py-0.5 font-black text-[10px] uppercase tracking-wider sm:px-3 sm:py-1 sm:text-xs">
                     #{post.category?.replace(/\s/g, '')}
                   </span>
                 </div>
 
                 <!-- Card body -->
                 <div class="px-4 py-4 sm:px-5 sm:pb-5">
-                  <h2 class="mb-2 font-black text-base text-[#07140c] tracking-tight sm:text-lg md:text-xl leading-snug group-hover:text-[#123b20] transition-colors">
+                  <h2 class="mb-2 font-black text-base text-[#0a1f0c] tracking-tight sm:text-lg md:text-xl leading-snug group-hover:text-[#1b5e20] transition-colors">
                     <a href={`/blog/${post.slug.current}`}>{post.title}</a>
                   </h2>
-                  <p class="mb-5 text-[#35483b] text-xs leading-relaxed sm:text-sm line-clamp-3">
+                  <p class="mb-5 text-[#3e2723] text-xs leading-relaxed sm:text-sm line-clamp-3">
                     {post.excerpt}
                   </p>
 
@@ -86,9 +86,9 @@ const posts = await getAllPosts();
                   <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
                     <a
                       href={`/blog/${post.slug.current}`}
-                      class="group/link relative flex items-center gap-2 font-black text-[#07140c] text-xs hover:text-[#123b20] sm:text-sm"
+                      class="group/link relative flex items-center gap-2 font-black text-[#0a1f0c] text-xs hover:text-[#1b5e20] sm:text-sm"
                     >
-                      <span class="flex items-center justify-center overflow-hidden border border-[#123b20]/20 p-2 transition-colors duration-300 group-hover/link:bg-[#07140c] group-hover/link:text-white sm:p-3">
+                      <span class="flex items-center justify-center overflow-hidden border border-[#1b5e20]/20 p-2 transition-colors duration-300 group-hover/link:bg-[#0a1f0c] group-hover/link:text-white sm:p-3">
                         <svg class="h-3 w-3 sm:h-4 sm:w-4 transition-transform duration-300 group-hover/link:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                         </svg>
@@ -110,10 +110,10 @@ const posts = await getAllPosts();
     </section>
 
     <!-- CTA -->
-    <section class="relative overflow-hidden bg-[#07140c] py-16 text-center text-white">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(185,242,74,.18),transparent_28rem)]"></div>
+    <section class="relative overflow-hidden bg-[#0a1f0c] py-16 text-center text-white">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(200,230,201,.18),transparent_28rem)]"></div>
       <div class="container relative z-10 mx-auto px-4 fade-in">
-        <p class="text-xs font-black uppercase tracking-[.22em] text-lime-200 mb-3">Ready when you are</p>
+        <p class="text-xs font-black uppercase tracking-[.22em] text-green-200 mb-3">Ready when you are</p>
         <h2 class="font-display text-3xl sm:text-4xl font-black mb-4">Ready for a great-looking lawn?</h2>
         <p class="text-white/70 mb-7 max-w-xl mx-auto">Quotes for Herriman, Riverton, South Jordan & Bluffdale homeowners.</p>
         <div class="flex flex-col sm:flex-row gap-3 justify-center">

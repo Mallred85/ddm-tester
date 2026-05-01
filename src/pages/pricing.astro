@@ -60,26 +60,26 @@ const pricingFaqs = [
   ]}
 >
   <Nav currentPage="pricing" />
-  <main class="pt-16 lg:pt-20 bg-[#f6efdf] text-[#07140c]">
+  <main class="pt-16 lg:pt-20 bg-[#f0e9e0] text-[#0a1f0c]">
     <section class="relative overflow-hidden px-4 py-20 sm:py-28">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(186,255,51,.22),transparent_34%),linear-gradient(135deg,#fffaf0_0%,#f4ead7_50%,#e9f5d8_100%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(186,255,51,.22),transparent_34%),linear-gradient(135deg,#f8f5f0_0%,#f0e9e0_50%,#e9f5d8_100%)]"></div>
       <div class="container relative z-10 mx-auto grid items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
         <div class="fade-in max-w-3xl">
-          <span class="inline-flex items-center rounded-full border border-[#123b20]/15 bg-white/70 px-5 py-2 text-sm font-black uppercase tracking-[.18em] text-[#0a2e1a] shadow-sm">Fair prices</span>
-          <h1 class="mt-7 font-display text-5xl font-black leading-[1.02] tracking-[-.045em] text-[#07140c] sm:text-6xl lg:text-7xl">
+          <span class="inline-flex items-center rounded-full border border-[#1b5e20]/15 bg-white/70 px-5 py-2 text-sm font-black uppercase tracking-[.18em] text-[#0a2e1a] shadow-sm">Fair prices</span>
+          <h1 class="mt-7 font-display text-5xl font-black leading-[1.02] tracking-[-.045em] text-[#0a1f0c] sm:text-6xl lg:text-7xl">
             Straightforward lawn care pricing.
           </h1>
-          <p class="mt-6 max-w-2xl text-lg leading-8 text-[#26382d] sm:text-xl">
+          <p class="mt-6 max-w-2xl text-lg leading-8 text-[#1b5e20] sm:text-xl">
             No confusing packages or surprise add-ons. Three brothers show up, work hard, and give you a clear price before service starts.
           </p>
           <div class="mt-9 flex flex-wrap gap-4">
             <a href="#quote" class="btn-primary px-9 py-4 text-base">Get a Quote</a>
-            <a href={PHONE_HREF} class="rounded-full border-2 border-[#07140c] px-9 py-4 text-base font-black text-[#07140c] hover:bg-[#07140c] hover:text-white transition-all">Call {PHONE_DISPLAY}</a>
+            <a href={PHONE_HREF} class="rounded-full border-2 border-[#0a1f0c] px-9 py-4 text-base font-black text-[#0a1f0c] hover:bg-[#0a1f0c] hover:text-white transition-all">Call {PHONE_DISPLAY}</a>
           </div>
         </div>
-        <div class="fade-in rounded-[2rem] border border-[#123b20]/10 bg-[#07140c] p-4 text-white shadow-2xl shadow-green-950/20">
+        <div class="fade-in rounded-[2rem] border border-[#1b5e20]/10 bg-[#0a1f0c] p-4 text-white shadow-2xl shadow-green-950/20">
           <div class="rounded-[1.5rem] border border-white/10 bg-white/6 p-6 sm:p-8">
-            <p class="text-sm font-black uppercase tracking-[.18em] text-lime-200">What every visit includes</p>
+            <p class="text-sm font-black uppercase tracking-[.18em] text-green-200">What every visit includes</p>
             <div class="mt-7 grid gap-4 sm:grid-cols-2">
               {included.map(({ title, desc }) => (
                 <div class="rounded-2xl border border-white/10 bg-white/7 p-5">
@@ -97,29 +97,29 @@ const pricingFaqs = [
       <div class="container mx-auto">
         <div class="fade-in mx-auto mb-12 max-w-2xl text-center">
           <span class="section-label mx-auto">Plans</span>
-          <h2 class="mt-5 font-display text-4xl font-black leading-[1.08] tracking-[-.035em] text-[#07140c] sm:text-5xl">Pick the rhythm that fits your yard.</h2>
-          <p class="mt-5 text-lg leading-8 text-[#35483b]">Both options include the complete visit: mow, edge, trim, and blow.</p>
+          <h2 class="mt-5 font-display text-4xl font-black leading-[1.08] tracking-[-.035em] text-[#0a1f0c] sm:text-5xl">Pick the rhythm that fits your yard.</h2>
+          <p class="mt-5 text-lg leading-8 text-[#3e2723]">Both options include the complete visit: mow, edge, trim, and blow.</p>
         </div>
         <div class="mx-auto grid max-w-5xl gap-7 md:grid-cols-2">
           {plans.map((plan) => (
-            <article class={`fade-in relative rounded-[2rem] border p-7 shadow-xl transition sm:p-8 ${plan.featured ? 'border-[#123b20]/20 bg-[#07140c] text-white shadow-green-950/20' : 'border-[#123b20]/10 bg-white/78 text-[#07140c] shadow-green-950/8'}`}>
-              {plan.featured && <span class="absolute right-7 top-7 rounded-full bg-lime-300 px-4 py-1.5 text-xs font-black uppercase tracking-[.14em] text-[#07140c]">Most popular</span>}
-              <p class={`text-sm font-black uppercase tracking-[.16em] ${plan.featured ? 'text-lime-200' : 'text-[#0a2e1a]'}`}>{plan.rhythm}</p>
+            <article class={`fade-in relative rounded-[2rem] border p-7 shadow-xl transition sm:p-8 ${plan.featured ? 'border-[#1b5e20]/20 bg-[#0a1f0c] text-white shadow-green-950/20' : 'border-[#1b5e20]/10 bg-white/78 text-[#0a1f0c] shadow-green-950/8'}`}>
+              {plan.featured && <span class="absolute right-7 top-7 rounded-full bg-green-300 px-4 py-1.5 text-xs font-black uppercase tracking-[.14em] text-[#0a1f0c]">Most popular</span>}
+              <p class={`text-sm font-black uppercase tracking-[.16em] ${plan.featured ? 'text-green-200' : 'text-[#0a2e1a]'}`}>{plan.rhythm}</p>
               <h3 class="mt-4 text-3xl font-black tracking-[-.03em]">{plan.name}</h3>
               <div class="mt-6 flex items-end gap-3">
-                <span class={`font-display text-7xl font-black tracking-[-.06em] ${plan.featured ? 'text-white' : 'text-[#07140c]'}`}>{plan.price}</span>
+                <span class={`font-display text-7xl font-black tracking-[-.06em] ${plan.featured ? 'text-white' : 'text-[#0a1f0c]'}`}>{plan.price}</span>
                 <span class={`mb-3 text-lg font-bold ${plan.featured ? 'text-white/72' : 'text-[#4b5d51]'}`}>/ visit</span>
               </div>
-              <p class={`mt-3 text-base leading-7 ${plan.featured ? 'text-white/76' : 'text-[#35483b]'}`}>{plan.note}</p>
+              <p class={`mt-3 text-base leading-7 ${plan.featured ? 'text-white/76' : 'text-[#3e2723]'}`}>{plan.note}</p>
               <ul class="mt-8 space-y-4">
                 {plan.features.map((item) => (
                   <li class="flex gap-3">
-                    <span class={`mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${plan.featured ? 'bg-lime-300 text-[#07140c]' : 'bg-[#07140c] text-white'}`}>✓</span>
-                    <span class={`text-sm font-semibold leading-6 ${plan.featured ? 'text-white/84' : 'text-[#26382d]'}`}>{item}</span>
+                    <span class={`mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full ${plan.featured ? 'bg-green-300 text-[#0a1f0c]' : 'bg-[#0a1f0c] text-white'}`}>✓</span>
+                    <span class={`text-sm font-semibold leading-6 ${plan.featured ? 'text-white/84' : 'text-[#1b5e20]'}`}>{item}</span>
                   </li>
                 ))}
               </ul>
-              <a href="#quote" class={`mt-9 inline-flex w-full items-center justify-center rounded-full px-7 py-4 text-base font-black transition ${plan.featured ? 'bg-lime-300 text-[#07140c] hover:bg-lime-200' : 'bg-[#07140c] text-white hover:bg-[#123b20]'}`}>Get a Quote</a>
+              <a href="#quote" class={`mt-9 inline-flex w-full items-center justify-center rounded-full px-7 py-4 text-base font-black transition ${plan.featured ? 'bg-green-300 text-[#0a1f0c] hover:bg-green-200' : 'bg-[#0a1f0c] text-white hover:bg-[#1b5e20]'}`}>Get a Quote</a>
             </article>
           ))}
         </div>
@@ -127,7 +127,7 @@ const pricingFaqs = [
       </div>
     </section>
 
-    <section class="relative overflow-hidden bg-[#07140c] px-4 py-20 text-white sm:py-28">
+    <section class="relative overflow-hidden bg-[#0a1f0c] px-4 py-20 text-white sm:py-28">
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_15%,rgba(186,255,51,.16),transparent_32%)]"></div>
       <div class="container relative z-10 mx-auto grid items-center gap-8 lg:grid-cols-[.95fr_1.05fr]">
         <div class="fade-in">
@@ -155,17 +155,17 @@ const pricingFaqs = [
       <div class="container mx-auto max-w-3xl">
         <div class="fade-in mb-10 text-center">
           <span class="section-label mx-auto">Pricing FAQ</span>
-          <h2 class="mt-5 font-display text-4xl font-black tracking-[-.035em] text-[#07140c]">Quick answers before you ask.</h2>
+          <h2 class="mt-5 font-display text-4xl font-black tracking-[-.035em] text-[#0a1f0c]">Quick answers before you ask.</h2>
         </div>
         <div class="space-y-4">
           {pricingFaqs.map(({ q, a }) => (
-            <div class="faq-item fade-in overflow-hidden rounded-[1.4rem] border border-[#123b20]/10 bg-white/80 shadow-lg shadow-green-950/5">
-              <button class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-black text-[#07140c]" aria-expanded="false">
+            <div class="faq-item fade-in overflow-hidden rounded-[1.4rem] border border-[#1b5e20]/10 bg-white/80 shadow-lg shadow-green-950/5">
+              <button class="faq-trigger flex w-full items-center justify-between gap-4 px-6 py-5 text-left font-black text-[#0a1f0c]" aria-expanded="false">
                 <span>{q}</span>
                 <svg class="faq-icon h-5 w-5 shrink-0 text-[#0a7a35] transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
               </button>
               <div class="faq-answer hidden px-6 pb-6">
-                <p class="text-base leading-7 text-[#35483b]">{a}</p>
+                <p class="text-base leading-7 text-[#3e2723]">{a}</p>
               </div>
             </div>
           ))}
@@ -173,7 +173,7 @@ const pricingFaqs = [
       </div>
     </section>
 
-    <section id="quote" class="relative overflow-hidden bg-[#07140c] px-4 py-24 text-white sm:py-32">
+    <section id="quote" class="relative overflow-hidden bg-[#0a1f0c] px-4 py-24 text-white sm:py-32">
       <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(186,255,51,.16),transparent_30%)]"></div>
       <div class="container relative z-10 mx-auto max-w-3xl">
         <div class="fade-in mb-12 text-center">
@@ -181,16 +181,16 @@ const pricingFaqs = [
           <h2 class="mt-5 font-display text-4xl font-black leading-[1.08] tracking-[-.035em] text-white sm:text-5xl">Tell us about your yard.</h2>
           <p class="mt-5 text-lg leading-8 text-white/76">Send the basics and we’ll reply with a fair price and simple timing.</p>
         </div>
-        <div class="fade-in rounded-[2rem] bg-[#fffaf0] p-3 text-[#07140c] shadow-2xl shadow-black/20 sm:p-5">
+        <div class="fade-in rounded-[2rem] bg-[#f8f5f0] p-3 text-[#0a1f0c] shadow-2xl shadow-black/20 sm:p-5">
           <QuoteForm endpoint={forms.quoteEndpoint} showPlanSelector client:load />
         </div>
       </div>
     </section>
 
-    <section class="bg-[#f6efdf] px-4 py-14 text-center">
+    <section class="bg-[#f0e9e0] px-4 py-14 text-center">
       <div class="container mx-auto fade-in">
-        <p class="mb-5 text-lg font-bold text-[#26382d]">Prefer to talk it through?</p>
-        <a href={PHONE_HREF} class="inline-flex items-center justify-center rounded-full bg-[#07140c] px-9 py-4 text-lg font-black text-white shadow-xl transition hover:-translate-y-1">Call or Text {PHONE_DISPLAY}</a>
+        <p class="mb-5 text-lg font-bold text-[#1b5e20]">Prefer to talk it through?</p>
+        <a href={PHONE_HREF} class="inline-flex items-center justify-center rounded-full bg-[#0a1f0c] px-9 py-4 text-lg font-black text-white shadow-xl transition hover:-translate-y-1">Call or Text {PHONE_DISPLAY}</a>
       </div>
     </section>
   </main>

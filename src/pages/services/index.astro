@@ -54,16 +54,16 @@ const services = [
   ]}
 >
   <Nav />
-  <main class="pt-16 lg:pt-20 bg-[#f6efdf] text-[#07140c]">
+  <main class="pt-16 lg:pt-20 bg-[#f0e9e0] text-[#0a1f0c]">
 
     <section class="relative overflow-hidden px-4 py-20 sm:py-28">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(186,255,51,.22),transparent_34%),linear-gradient(135deg,#fffaf0_0%,#f4ead7_55%,#eaf6da_100%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(186,255,51,.22),transparent_34%),linear-gradient(135deg,#f8f5f0_0%,#f0e9e0_55%,#e8f5e9_100%)]"></div>
       <div class="container relative z-10 mx-auto max-w-4xl text-center fade-in">
         <span class="section-label mx-auto">What we do</span>
-        <h1 class="mt-6 font-display text-5xl font-black leading-[1.04] tracking-[-.045em] text-[#07140c] sm:text-6xl lg:text-7xl">
+        <h1 class="mt-6 font-display text-5xl font-black leading-[1.04] tracking-[-.045em] text-[#0a1f0c] sm:text-6xl lg:text-7xl">
           Lawn care services that look finished.
         </h1>
-        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#26382d] sm:text-xl">
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#1b5e20] sm:text-xl">
           Mowing, edging, trimming, blowing, and seasonal cleanup from three brothers who enjoy working hard and care about the details.
         </p>
       </div>
@@ -75,18 +75,18 @@ const services = [
           {services.map(({ title, slug, desc, image, kicker }) => (
             <a
               href={`/services/${slug}`}
-              class="fade-in group overflow-hidden rounded-[2rem] border border-[#123b20]/10 bg-white shadow-xl shadow-green-950/8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-950/14"
+              class="fade-in group overflow-hidden rounded-[2rem] border border-[#1b5e20]/10 bg-white shadow-xl shadow-green-950/8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-950/14"
             >
-              <div class="relative h-64 overflow-hidden bg-[#07140c]">
+              <div class="relative h-64 overflow-hidden bg-[#0a1f0c]">
                 <img src={image} alt={`${title} by Duck Duck Mow`} class="h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" width="640" height="420" />
-                <div class="absolute inset-0 bg-gradient-to-t from-[#07140c]/84 via-[#07140c]/28 to-transparent"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0a1f0c]/84 via-[#0a1f0c]/28 to-transparent"></div>
                 <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/10 to-transparent"></div>
-                <span class="absolute left-5 top-5 rounded-full bg-lime-300 px-4 py-1.5 text-xs font-black uppercase tracking-[.14em] text-[#07140c]">{kicker}</span>
+                <span class="absolute left-5 top-5 rounded-full bg-green-300 px-4 py-1.5 text-xs font-black uppercase tracking-[.14em] text-[#0a1f0c]">{kicker}</span>
                 <h2 class="absolute bottom-5 left-5 right-5 font-display text-3xl font-black leading-tight tracking-[-.035em] text-white">{title}</h2>
               </div>
               <div class="p-6">
-                <p class="min-h-[3.5rem] text-base leading-7 text-[#35483b]">{desc}</p>
-                <span class="mt-5 inline-flex items-center gap-2 rounded-full bg-[#07140c] px-5 py-3 text-sm font-black text-white transition group-hover:bg-[#0a7a35]">
+                <p class="min-h-[3.5rem] text-base leading-7 text-[#3e2723]">{desc}</p>
+                <span class="mt-5 inline-flex items-center gap-2 rounded-full bg-[#0a1f0c] px-5 py-3 text-sm font-black text-white transition group-hover:bg-[#0a7a35]">
                   View service
                   <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -99,10 +99,10 @@ const services = [
       </div>
     </section>
 
-    <section class="bg-[#07140c] px-4 py-16 text-center text-white">
+    <section class="bg-[#0a1f0c] px-4 py-16 text-center text-white">
       <div class="container mx-auto fade-in">
         <p class="mb-5 text-lg font-semibold text-white/78">Ready for a yard that looks cared for?</p>
-        <a href="/#contact" class="inline-flex items-center justify-center gap-3 rounded-full bg-lime-300 px-10 py-4 text-xl font-black text-[#07140c] shadow-2xl transition hover:-translate-y-1 hover:bg-lime-200">
+        <a href="/#contact" class="inline-flex items-center justify-center gap-3 rounded-full bg-green-300 px-10 py-4 text-xl font-black text-[#0a1f0c] shadow-2xl transition hover:-translate-y-1 hover:bg-green-200">
           Get a Quote
         </a>
       </div>

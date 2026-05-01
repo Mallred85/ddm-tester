@@ -41,15 +41,15 @@ export const faqs = [
 ];
 ---
 
-<section id="faq" class="relative overflow-hidden bg-[#07140c] py-24 text-white sm:py-32">
-  <div class="absolute inset-0 bg-[radial-gradient(circle_at_14%_10%,rgba(185,242,74,.22),transparent_24rem),radial-gradient(circle_at_90%_35%,rgba(15,143,58,.24),transparent_28rem),linear-gradient(180deg,#07140c,#0d1d12)]"></div>
+<section id="faq" class="relative overflow-hidden bg-[#0a1f0c] py-24 text-white sm:py-32">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_14%_10%,rgba(200,230,201,.22),transparent_24rem),radial-gradient(circle_at_90%_35%,rgba(15,143,58,.24),transparent_28rem),linear-gradient(180deg,#0a1f0c,#0d1d12)]"></div>
   <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-lime-200/40 to-transparent"></div>
   <div class="noise-overlay"></div>
 
   <div class="container relative z-10 mx-auto px-4">
     <div class="grid grid-cols-1 gap-10 lg:grid-cols-[.78fr_1.22fr] lg:items-start">
       <div class="fade-in lg:sticky lg:top-28">
-        <span class="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-lime-200 backdrop-blur-xl">
+        <span class="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-green-200 backdrop-blur-xl">
           Questions
         </span>
         <h2 class="mt-5 max-w-xl text-4xl font-black leading-[1.08] tracking-[-.035em] text-white sm:text-5xl lg:text-6xl text-balance">
@@ -59,17 +59,17 @@ export const faqs = [
           No confusing process, no pressure, and no overcomplicated lawn-care talk. Here’s what homeowners usually ask before getting on the schedule.
         </p>
         <div class="mt-8 rounded-[1.5rem] border border-white/12 bg-white/[.07] p-5 backdrop-blur-xl">
-          <p class="text-sm font-black uppercase tracking-[.16em] text-lime-200">Prefer texting?</p>
+          <p class="text-sm font-black uppercase tracking-[.16em] text-green-200">Prefer texting?</p>
           <p class="mt-2 text-base leading-7 text-white/78">Send your address and a few yard photos. We’ll reply with the next step.</p>
         </div>
       </div>
 
       <div class="space-y-4">
         {faqs.map(({ question, answer }) => (
-          <div class="faq-item fade-in overflow-hidden rounded-[1.5rem] border border-white/12 bg-white/[.08] shadow-2xl shadow-black/15 backdrop-blur-xl transition duration-300 hover:border-lime-200/35 hover:bg-white/[.11]">
+          <div class="faq-item fade-in overflow-hidden rounded-[1.5rem] border border-white/12 bg-white/[.08] shadow-2xl shadow-black/15 backdrop-blur-xl transition duration-300 hover:border-green-200/35 hover:bg-white/[.11]">
             <button class="faq-trigger flex w-full items-center justify-between gap-5 px-6 py-5 text-left text-base font-black text-white sm:px-7 sm:py-6 sm:text-lg" aria-expanded="false">
               <span>{question}</span>
-              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-lime-300 text-[#07140c] shadow-lg shadow-lime-300/10">
+              <span class="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-green-300 text-[#0a1f0c] shadow-lg shadow-lime-300/10">
                 <svg class="faq-icon h-5 w-5 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7" />
                 </svg>

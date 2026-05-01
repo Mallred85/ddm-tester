@@ -218,19 +218,19 @@ const faqSchema = {
   <main class="pt-16 lg:pt-20">
 
     <!-- Hero -->
-    <section class="relative overflow-hidden bg-[#f6efdf] px-4 py-16 sm:py-24">
-      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(186,255,51,.2),transparent_32%),linear-gradient(135deg,#fffaf0_0%,#f4ead7_55%,#eaf6da_100%)]"></div>
+    <section class="relative overflow-hidden bg-[#f0e9e0] px-4 py-16 sm:py-24">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(186,255,51,.2),transparent_32%),linear-gradient(135deg,#f8f5f0_0%,#f0e9e0_55%,#e8f5e9_100%)]"></div>
       <div class="container relative z-10 mx-auto grid items-center gap-10 lg:grid-cols-[1.05fr_.95fr]">
         <div class="fade-in max-w-3xl">
           <div class="mb-5 flex items-center gap-2 text-sm font-black">
             <a href="/services" class="rounded-full bg-white/80 px-4 py-2 text-[#0a2e1a] shadow-sm hover:bg-white">Services</a>
             <span class="text-[#6b775f]">/</span>
-            <span class="rounded-full bg-lime-200/70 px-4 py-2 text-[#07140c]">{title}</span>
+            <span class="rounded-full bg-green-200/70 px-4 py-2 text-[#0a1f0c]">{title}</span>
           </div>
-          <h1 class="font-display text-5xl font-black leading-[1.02] tracking-[-.045em] text-[#07140c] sm:text-6xl lg:text-7xl text-balance">
+          <h1 class="font-display text-5xl font-black leading-[1.02] tracking-[-.045em] text-[#0a1f0c] sm:text-6xl lg:text-7xl text-balance">
             {h1}
           </h1>
-          <p class="mt-7 max-w-3xl text-lg leading-8 text-[#26382d] sm:text-xl">
+          <p class="mt-7 max-w-3xl text-lg leading-8 text-[#1b5e20] sm:text-xl">
             {intro}
           </p>
           <div class="mt-9 flex flex-wrap gap-4">
@@ -243,12 +243,12 @@ const faqSchema = {
           </div>
         </div>
         <div class="fade-in relative">
-          <div class="absolute -inset-4 rounded-[2.3rem] bg-lime-300/20 blur-2xl"></div>
-          <div class="relative overflow-hidden rounded-[2rem] border border-[#123b20]/10 bg-[#07140c] p-3 shadow-2xl shadow-green-950/20">
+          <div class="absolute -inset-4 rounded-[2.3rem] bg-green-300/20 blur-2xl"></div>
+          <div class="relative overflow-hidden rounded-[2rem] border border-[#1b5e20]/10 bg-[#0a1f0c] p-3 shadow-2xl shadow-green-950/20">
             <img src={serviceImage} alt={imageAlt} class="h-[22rem] w-full rounded-[1.5rem] object-cover sm:h-[28rem]" loading="eager" width="720" height="620" />
-            <div class="absolute inset-3 rounded-[1.5rem] bg-gradient-to-t from-[#07140c]/82 via-[#07140c]/10 to-transparent"></div>
+            <div class="absolute inset-3 rounded-[1.5rem] bg-gradient-to-t from-[#0a1f0c]/82 via-[#0a1f0c]/10 to-transparent"></div>
             <div class="absolute bottom-7 left-7 right-7 rounded-2xl border border-white/12 bg-white/10 p-5 text-white backdrop-blur-md">
-              <p class="text-sm font-black uppercase tracking-[.16em] text-lime-200">Included every visit</p>
+              <p class="text-sm font-black uppercase tracking-[.16em] text-green-200">Included every visit</p>
               <p class="mt-2 text-xl font-black text-white">Mow, edge, trim, and blow — done with care.</p>
             </div>
           </div>
@@ -257,17 +257,17 @@ const faqSchema = {
     </section>
 
     <!-- Body Copy -->
-    <section class="bg-[#fffaf0] px-4 py-20 sm:py-28">
+    <section class="bg-[#f8f5f0] px-4 py-20 sm:py-28">
       <div class="container mx-auto max-w-5xl">
         <div class="fade-in grid gap-8 lg:grid-cols-[.72fr_1.28fr]">
-          <aside class="rounded-[2rem] border border-[#123b20]/10 bg-white/78 p-7 shadow-xl shadow-green-950/5">
+          <aside class="rounded-[2rem] border border-[#1b5e20]/10 bg-white/78 p-7 shadow-xl shadow-green-950/5">
             <p class="text-sm font-black uppercase tracking-[.16em] text-[#0a2e1a]">Our standard</p>
-            <p class="mt-4 font-display text-3xl font-black leading-tight tracking-[-.035em] text-[#07140c]">Hard work, clean details, and no guesswork.</p>
-            <p class="mt-4 text-base leading-7 text-[#35483b]">This is brother-run lawn care built around doing the basics really well.</p>
+            <p class="mt-4 font-display text-3xl font-black leading-tight tracking-[-.035em] text-[#0a1f0c]">Hard work, clean details, and no guesswork.</p>
+            <p class="mt-4 text-base leading-7 text-[#3e2723]">This is brother-run lawn care built around doing the basics really well.</p>
           </aside>
-          <div class="rounded-[2rem] border border-[#123b20]/10 bg-white/82 p-7 shadow-xl shadow-green-950/5 sm:p-9">
+          <div class="rounded-[2rem] border border-[#1b5e20]/10 bg-white/82 p-7 shadow-xl shadow-green-950/5 sm:p-9">
             {body.map((para) => (
-              <p class="mb-5 text-lg leading-8 text-[#26382d] last:mb-0">{para}</p>
+              <p class="mb-5 text-lg leading-8 text-[#1b5e20] last:mb-0">{para}</p>
             ))}
           </div>
         </div>
@@ -275,7 +275,7 @@ const faqSchema = {
     </section>
 
     <!-- Features -->
-    <section class="py-20 sm:py-28 bg-gradient-to-br from-[#efe5d2] via-[#fffaf0] to-[#edf8d9]">
+    <section class="py-20 sm:py-28 bg-gradient-to-br from-[#e8ddd0] via-[#f8f5f0] to-[#e8f5e9]">
       <div class="container mx-auto px-4 max-w-4xl">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 mb-10 font-display fade-in">
           What You Get
@@ -291,7 +291,7 @@ const faqSchema = {
                 </div>
                 <div>
                   <h3 class="font-bold text-gray-900 mb-1">{ftitle}</h3>
-                  <p class="text-sm text-[#35483b] leading-relaxed">{desc}</p>
+                  <p class="text-sm text-[#3e2723] leading-relaxed">{desc}</p>
                 </div>
               </div>
             </div>
@@ -301,7 +301,7 @@ const faqSchema = {
     </section>
 
     <!-- Service Areas -->
-    <section class="py-14 bg-[#07140c] text-white border-t border-white/10">
+    <section class="py-14 bg-[#0a1f0c] text-white border-t border-white/10">
       <div class="container mx-auto px-4 max-w-4xl fade-in">
         <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Service Areas</p>
         <div class="flex flex-wrap gap-3">
@@ -320,7 +320,7 @@ const faqSchema = {
     </section>
 
     <!-- FAQ -->
-    <section class="py-20 sm:py-28 bg-[#fffaf0]">
+    <section class="py-20 sm:py-28 bg-[#f8f5f0]">
       <div class="container mx-auto px-4 max-w-3xl">
         <h2 class="text-2xl sm:text-3xl font-extrabold text-gray-900 text-center mb-10 font-display fade-in">
           {title} <span class="text-green-800">FAQ</span>
@@ -335,7 +335,7 @@ const faqSchema = {
                 </svg>
               </button>
               <div class="faq-answer hidden px-6 pb-5">
-                <p class="text-[#35483b] leading-relaxed text-sm">{a}</p>
+                <p class="text-[#3e2723] leading-relaxed text-sm">{a}</p>
               </div>
             </div>
           ))}
@@ -344,7 +344,7 @@ const faqSchema = {
     </section>
 
     <!-- Quote Form -->
-    <section class="py-24 sm:py-32 bg-gradient-to-b from-[#fffaf0] to-[#efe5d2]">
+    <section class="py-24 sm:py-32 bg-gradient-to-b from-[#f8f5f0] to-[#e8ddd0]">
       <div class="container mx-auto px-4 max-w-3xl">
         <div class="text-center mb-12 fade-in">
           <span class="inline-block px-4 py-1.5 bg-green-50 text-green-800 text-sm font-semibold rounded-full mb-4">
@@ -353,7 +353,7 @@ const faqSchema = {
           <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3 font-display">
             Get a <span class="text-green-800">{title} Quote</span>
           </h2>
-          <p class="text-[#35483b] text-lg">We’ll respond with clear timing and fair prices.</p>
+          <p class="text-[#3e2723] text-lg">We’ll respond with clear timing and fair prices.</p>
         </div>
         <div class="fade-in">
           <QuoteForm endpoint={forms.quoteEndpoint} defaultServices={[defaultService]} client:load />

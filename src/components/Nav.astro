@@ -12,15 +12,15 @@ const nav = [
 ---
 
 <header class="fixed inset-x-0 top-0 z-50 px-3 pt-3">
-  <nav class="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/18 bg-[#07140c]/72 px-4 py-3 shadow-2xl shadow-black/20 backdrop-blur-2xl lg:px-5" aria-label="Primary navigation">
+  <nav class="mx-auto flex max-w-7xl items-center justify-between rounded-full border border-white/18 bg-[#0a1f0c]/72 px-4 py-3 shadow-2xl shadow-black/20 backdrop-blur-2xl lg:px-5" aria-label="Primary navigation">
     <a href="/" class="flex items-center gap-3">
       <img src="/logo-nav.webp" alt="Duck Duck Mow" class="h-11 w-auto" width="160" height="80" />
-      <span class="hidden text-xs font-black uppercase tracking-[.22em] text-lime-200 sm:block">Duck Duck Mow</span>
+      <span class="hidden text-xs font-black uppercase tracking-[.22em] text-green-200 sm:block">Duck Duck Mow</span>
     </a>
 
     <div class="hidden items-center gap-1 lg:flex">
       {nav.map((item) => (
-        <a href={item.href} class={`rounded-full px-4 py-2 text-sm font-extrabold transition ${currentPage === item.key ? 'bg-lime-300 text-[#07140c]' : 'text-white/76 hover:bg-white/10 hover:text-white'}`}>{item.label}</a>
+        <a href={item.href} class={`rounded-full px-4 py-2 text-sm font-extrabold transition ${currentPage === item.key ? 'bg-green-300 text-[#0a1f0c]' : 'text-white/76 hover:bg-white/10 hover:text-white'}`}>{item.label}</a>
       ))}
     </div>
 
@@ -34,10 +34,10 @@ const nav = [
     </button>
   </nav>
 
-  <div id="mobile-menu" class="mx-auto mt-2 hidden max-w-7xl rounded-[1.6rem] border border-white/16 bg-[#07140c]/92 p-4 shadow-2xl backdrop-blur-2xl lg:hidden">
+  <div id="mobile-menu" class="mx-auto mt-2 hidden max-w-7xl rounded-[1.6rem] border border-white/16 bg-[#0a1f0c]/92 p-4 shadow-2xl backdrop-blur-2xl lg:hidden">
     <div class="grid gap-2">
       {nav.map((item) => <a href={item.href} class="rounded-2xl px-4 py-3 font-black text-white/82 hover:bg-white/10">{item.label}</a>)}
-      <a href={PHONE_HREF} class="rounded-2xl border border-white/12 px-4 py-3 font-black text-lime-200">Call or text {PHONE_DISPLAY}</a>
+      <a href={PHONE_HREF} class="rounded-2xl border border-white/12 px-4 py-3 font-black text-green-200">Call or text {PHONE_DISPLAY}</a>
       <a href="/#contact" class="btn-primary px-4 py-3">Get a Quote</a>
     </div>
   </div>
