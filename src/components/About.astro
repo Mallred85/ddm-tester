@@ -1,0 +1,36 @@
+---
+const standards = ['Three hard-working brothers', 'Respect for your yard', 'Detail-first finish', 'Clear communication'];
+---
+
+<section id="about" class="relative overflow-hidden bg-[#07140c] py-24 text-white sm:py-32">
+  <div class="absolute inset-0 stripe-field opacity-95"></div>
+  <div class="noise-overlay"></div>
+  <div class="container relative z-10 mx-auto px-4">
+    <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-[.95fr_1.05fr]">
+      <div class="fade-in-left relative">
+        <div class="absolute -inset-6 rounded-[3rem] bg-lime-300/10 blur-3xl"></div>
+        <div class="relative overflow-hidden rounded-[2.4rem] border border-white/16 bg-white/10 p-4 shadow-2xl backdrop-blur-xl">
+          <img src="/images/about-mowing.webp" alt="Duck Duck Mow crew mowing a premium lawn" class="h-[34rem] w-full rounded-[1.8rem] object-cover" loading="lazy" />
+          <div class="absolute bottom-8 left-8 right-8 rounded-[1.6rem] border border-white/18 bg-[#07140c]/70 p-5 backdrop-blur-2xl">
+            <p class="text-xs font-black uppercase tracking-[.18em] text-lime-200">Three brothers, one standard</p>
+            <p class="font-display mt-2 text-3xl font-black">Small crew standards. Big curb appeal.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in-right">
+        <span class="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-lime-200 backdrop-blur-xl">Why it feels different</span>
+        <h2 class="font-display mt-5 text-5xl font-black leading-[.9] tracking-tight sm:text-6xl lg:text-7xl text-balance">The crew that treats every yard like a front-page photo.</h2>
+        <p class="mt-7 text-lg leading-8 text-white/72">Duck Duck Mow is built around three brothers who enjoy working hard and doing the job right. Homeowners should not have to manage their lawn crew, so we keep communication simple and finish each visit with the details cleaned up instead of left for later.</p>
+        <div class="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {standards.map((item) => (
+            <div class="rounded-[1.4rem] border border-white/12 bg-white/[.07] p-5 backdrop-blur-xl">
+              <span class="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-lime-300 font-black text-[#07140c]">✓</span>
+              <p class="font-black text-white">{item}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

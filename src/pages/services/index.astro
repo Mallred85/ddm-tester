@@ -1,0 +1,112 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/Nav.astro';
+import Footer from '@/components/Footer.astro';
+import { PHONE_DISPLAY, PHONE_HREF, site } from '@/config/site';
+
+const services = [
+  {
+    title: 'Lawn Mowing',
+    slug: 'lawn-mowing',
+    kicker: 'Clean weekly cuts',
+    image: '/images/service-mowing.webp',
+    desc: 'Weekly and bi-monthly mowing for Herriman, Riverton, South Jordan & Bluffdale. Clean, even cuts every visit.',
+  },
+  {
+    title: 'Edging',
+    slug: 'edging',
+    kicker: 'Sharp borders',
+    image: '/images/service-edging-worker.webp',
+    desc: 'Crisp, defined edges along every driveway, sidewalk, and landscape bed - included on every visit.',
+  },
+  {
+    title: 'Trimming',
+    slug: 'trimming',
+    kicker: 'Detail work',
+    image: '/images/service-trimming.webp',
+    desc: 'Detail trimming around fences, posts, sprinkler heads, and anywhere the mower can\'t reach.',
+  },
+  {
+    title: 'Lawn Blowing',
+    slug: 'lawn-blowing',
+    kicker: 'Clean finish',
+    image: '/images/service-blowing.webp',
+    desc: 'Every hard surface blown clean at the end of every visit. Driveways, sidewalks, patios - no clippings left behind.',
+  },
+  {
+    title: 'Seasonal Cleanup',
+    slug: 'seasonal-cleanup',
+    kicker: 'Yard reset',
+    image: '/images/service-cleanup.webp',
+    desc: 'Spring and fall cleanups including leaf removal, debris clearing, and full-yard detail work. Custom quotes.',
+  },
+];
+---
+
+<BaseLayout
+  title="Lawn Care Services | Duck Duck Mow | Herriman, Riverton, South Jordan & Bluffdale"
+  noSuffix
+  description="Professional lawn mowing, edging, trimming, blowing, and seasonal cleanup in Herriman, Riverton, South Jordan, and Bluffdale, Utah. Full-service lawn care, every visit."
+  keywords="lawn care services Utah, lawn mowing edging trimming, seasonal cleanup Utah, South Salt Lake County lawn service"
+  breadcrumbs={[
+    { name: 'Home', url: site.url },
+    { name: 'Services', url: `${site.url}/services` },
+  ]}
+>
+  <Nav />
+  <main class="pt-16 lg:pt-20 bg-[#f6efdf] text-[#07140c]">
+
+    <section class="relative overflow-hidden px-4 py-20 sm:py-28">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(186,255,51,.22),transparent_34%),linear-gradient(135deg,#fffaf0_0%,#f4ead7_55%,#eaf6da_100%)]"></div>
+      <div class="container relative z-10 mx-auto max-w-4xl text-center fade-in">
+        <span class="section-label mx-auto">What we do</span>
+        <h1 class="mt-6 font-display text-5xl font-black leading-[1.04] tracking-[-.045em] text-[#07140c] sm:text-6xl lg:text-7xl">
+          Lawn care services that look finished.
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-[#26382d] sm:text-xl">
+          Mowing, edging, trimming, blowing, and seasonal cleanup from three brothers who enjoy working hard and care about the details.
+        </p>
+      </div>
+    </section>
+
+    <section class="px-4 pb-20 sm:pb-28">
+      <div class="container mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
+          {services.map(({ title, slug, desc, image, kicker }) => (
+            <a
+              href={`/services/${slug}`}
+              class="fade-in group overflow-hidden rounded-[2rem] border border-[#123b20]/10 bg-white shadow-xl shadow-green-950/8 transition-all hover:-translate-y-1 hover:shadow-2xl hover:shadow-green-950/14"
+            >
+              <div class="relative h-64 overflow-hidden bg-[#07140c]">
+                <img src={image} alt={`${title} by Duck Duck Mow`} class="h-full w-full object-cover transition duration-700 group-hover:scale-105" loading="lazy" width="640" height="420" />
+                <div class="absolute inset-0 bg-gradient-to-t from-[#07140c]/84 via-[#07140c]/28 to-transparent"></div>
+                <div class="absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/10 to-transparent"></div>
+                <span class="absolute left-5 top-5 rounded-full bg-lime-300 px-4 py-1.5 text-xs font-black uppercase tracking-[.14em] text-[#07140c]">{kicker}</span>
+                <h2 class="absolute bottom-5 left-5 right-5 font-display text-3xl font-black leading-tight tracking-[-.035em] text-white">{title}</h2>
+              </div>
+              <div class="p-6">
+                <p class="min-h-[3.5rem] text-base leading-7 text-[#35483b]">{desc}</p>
+                <span class="mt-5 inline-flex items-center gap-2 rounded-full bg-[#07140c] px-5 py-3 text-sm font-black text-white transition group-hover:bg-[#0a7a35]">
+                  View service
+                  <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-[#07140c] px-4 py-16 text-center text-white">
+      <div class="container mx-auto fade-in">
+        <p class="mb-5 text-lg font-semibold text-white/78">Ready for a yard that looks cared for?</p>
+        <a href="/#contact" class="inline-flex items-center justify-center gap-3 rounded-full bg-lime-300 px-10 py-4 text-xl font-black text-[#07140c] shadow-2xl transition hover:-translate-y-1 hover:bg-lime-200">
+          Get a Quote
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

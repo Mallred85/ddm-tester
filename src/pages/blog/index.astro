@@ -1,111 +1,106 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import Header from '../../components/Header.astro';
-import Footer from '../../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
-import { getCollection } from 'astro:content';
-import FormattedDate from '../../components/FormattedDate.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/Nav.astro';
+import Footer from '@/components/Footer.astro';
+import { getAllPosts, formatPostDate, getCategoryColor } from '@/lib/sanity';
 
-const posts = (await getCollection('blog')).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = await getAllPosts();
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-		<style>
-			main {
-				width: 960px;
-			}
-			ul {
-				display: flex;
-				flex-wrap: wrap;
-				gap: 2rem;
-				list-style-type: none;
-				margin: 0;
-				padding: 0;
-			}
-			ul li {
-				width: calc(50% - 1rem);
-			}
-			ul li * {
-				text-decoration: none;
-				transition: 0.2s ease;
-			}
-			ul li:first-child {
-				width: 100%;
-				margin-bottom: 1rem;
-				text-align: center;
-			}
-			ul li:first-child img {
-				width: 100%;
-			}
-			ul li:first-child .title {
-				font-size: 2.369rem;
-			}
-			ul li img {
-				margin-bottom: 0.5rem;
-				border-radius: 12px;
-			}
-			ul li a {
-				display: block;
-			}
-			.title {
-				margin: 0;
-				color: rgb(var(--black));
-				line-height: 1;
-			}
-			.date {
-				margin: 0;
-				color: rgb(var(--gray));
-			}
-			ul li a:hover h4,
-			ul li a:hover .date {
-				color: rgb(var(--accent));
-			}
-			ul a:hover img {
-				box-shadow: var(--box-shadow);
-			}
-			@media (max-width: 720px) {
-				ul {
-					gap: 0.5em;
-				}
-				ul li {
-					width: 100%;
-					text-align: center;
-				}
-				ul li:first-child {
-					margin-bottom: 0;
-				}
-				ul li:first-child .title {
-					font-size: 1.563em;
-				}
-			}
-		</style>
-	</head>
-	<body>
-		<Header />
-		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									<img width={720} height={360} src={post.data.heroImage} alt="" />
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout
+  title="Lawn Care Blog"
+  description="Lawn care tips, seasonal guides, and weed control advice for homeowners in Herriman, Riverton, South Jordan & Bluffdale, Utah."
+  keywords="lawn care tips Utah, mowing tips Herriman, spring lawn cleanup, weed control Riverton"
+  breadcrumbs={[
+    { name: 'Home', url: 'https://duckduckmow.com' },
+    { name: 'Blog', url: 'https://duckduckmow.com/blog' },
+  ]}
+>
+  <Nav currentPage="blog" />
+  <main class="pt-16 lg:pt-20">
+
+    <!-- Hero -->
+    <section class="py-16 sm:py-20 bg-gradient-to-br from-[#fffaf0] via-[#f6efdf] to-[#eaf6da]">
+      <div class="container mx-auto px-4 text-center fade-in">
+        <span class="inline-block px-4 py-1.5 bg-green-50 text-green-800 text-sm font-semibold rounded-full mb-4">
+          Lawn Care Tips
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-4 font-display">
+          The Duck Duck Mow <span class="text-green-800">Blog</span>
+        </h1>
+        <p class="text-lg text-[#35483b] max-w-2xl mx-auto">
+          Practical lawn care advice for homeowners in Herriman, Riverton, South Jordan & Bluffdale.
+        </p>
+      </div>
+    </section>
+
+    <!-- Posts grid -->
+    <section class="py-16 sm:py-20 bg-[#fffaf0]">
+      <div class="container mx-auto px-4">
+        {posts.length === 0 ? (
+          <div class="text-center py-20 fade-in">
+            <p class="text-gray-400 text-lg">No posts yet, check back soon!</p>
+            <a href="/" class="mt-4 inline-flex items-center gap-2 text-green-800 font-semibold hover:underline">
+              ← Back to Home
+            </a>
+          </div>
+        ) : (
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {posts.map((post) => (
+              <article class="fade-in group bg-[#fffaf0] rounded-2xl border border-gray-100 hover:border-green-200 overflow-hidden hover:shadow-xl hover:shadow-green-500/5 transition-all hover:-translate-y-1">
+                <div class="p-7">
+                  <div class="flex items-center gap-3 mb-4">
+                    <span class={`text-xs font-semibold px-3 py-1 rounded-full ${getCategoryColor(post.category)}`}>
+                      {post.category}
+                    </span>
+                    <span class="text-xs text-gray-400">{post.readTime} min read</span>
+                  </div>
+
+                  <h2 class="text-lg font-extrabold text-gray-900 mb-3 group-hover:text-green-800 transition-colors leading-snug">
+                    <a href={`/blog/${post.slug.current}`}>{post.title}</a>
+                  </h2>
+
+                  <p class="text-[#35483b] text-sm leading-relaxed mb-5 line-clamp-3">{post.excerpt}</p>
+
+                  <div class="flex items-center justify-between">
+                    <div>
+                      <p class="text-xs font-semibold text-gray-700">{post.author}</p>
+                      <p class="text-xs text-gray-400">{formatPostDate(post.publishedAt)} · {post.city}</p>
+                    </div>
+                    <a
+                      href={`/blog/${post.slug.current}`}
+                      class="flex items-center gap-1 text-sm font-semibold text-green-800 hover:text-green-900 transition-colors"
+                    >
+                      Read
+                      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-16 bg-gradient-to-br from-green-600 to-emerald-700 text-white text-center">
+      <div class="container mx-auto px-4 fade-in">
+        <h2 class="text-2xl sm:text-3xl font-extrabold mb-4 font-display">Ready for a Great-Looking Lawn?</h2>
+        <p class="text-white/80 mb-6">Quotes for Herriman, Riverton, South Jordan & Bluffdale homeowners.</p>
+        <a
+          href="/#contact"
+          class="inline-flex items-center gap-2 px-8 py-4 bg-[#fffaf0] text-green-800 font-bold rounded-full hover:bg-green-50 transition-all shadow-xl hover:scale-105"
+        >
+          Get a Quote
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

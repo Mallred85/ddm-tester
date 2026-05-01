@@ -1,50 +1,94 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Nav from '@/components/Nav.astro';
+import Hero from '@/components/Hero.astro';
+import Services from '@/components/Services.astro';
+import About from '@/components/About.astro';
+import Reviews from '@/components/Reviews.astro';
+import ServiceAreas from '@/components/ServiceAreas.astro';
+import FAQ, { faqs } from '@/components/FAQ.astro';
+import Footer from '@/components/Footer.astro';
+import QuoteForm from '@/components/QuoteForm.tsx';
+import { forms } from '@/config/forms';
+import { PHONE_DISPLAY, PHONE_HREF } from '@/config/site';
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map(({ question, answer }) => ({
+    '@type': 'Question',
+    name: question,
+    acceptedAnswer: { '@type': 'Answer', text: answer },
+  })),
+};
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
-</html>
+<BaseLayout
+  title="Duck Duck Mow | Premium Lawn Care in Herriman, Riverton, South Jordan & Bluffdale"
+  noSuffix
+  description="Boutique lawn care in Herriman, Riverton, South Jordan & Bluffdale, UT. Premium mowing, edging, trimming and seasonal cleanup with fast quotes."
+  keywords="premium lawn care Herriman, lawn mowing Riverton, South Jordan lawn service, Bluffdale yard care, Utah lawn mowing, seasonal cleanup Utah"
+  schema={faqSchema}
+>
+  <Nav currentPage="home" />
+  <main>
+    <Hero />
+
+    <section class="relative -mt-10 z-20 px-4">
+      <div class="container mx-auto">
+        <div class="overflow-hidden rounded-[2rem] border border-[#123b20]/10 bg-[#07140c] text-white shadow-2xl shadow-green-950/20">
+          <div class="grid gap-0 md:grid-cols-[1.15fr_.95fr_.95fr]">
+            <div class="border-b border-white/10 p-7 md:border-b-0 md:border-r">
+              <p class="text-xs font-black uppercase tracking-[.18em] text-lime-200">Three brothers. One standard.</p>
+              <p class="mt-3 text-xl font-black leading-snug">Hard work, clean edges, and yards that look cared for.</p>
+            </div>
+            <div class="border-b border-white/10 p-7 md:border-b-0 md:border-r">
+              <p class="text-xs font-black uppercase tracking-[.18em] text-lime-200">Every visit</p>
+              <p class="mt-3 text-xl font-black leading-snug">Mow, edge, trim, and blow until the whole property feels finished.</p>
+            </div>
+            <div class="p-7">
+              <p class="text-xs font-black uppercase tracking-[.18em] text-lime-200">Simple quotes</p>
+              <p class="mt-3 text-xl font-black leading-snug">Send the address. We’ll give you a clear price and next step.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Services />
+    <About />
+    <Reviews />
+    <ServiceAreas />
+
+    <section id="contact" class="relative overflow-hidden bg-[#07140c] py-24 text-white sm:py-32">
+      <div class="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(185,242,74,.20),transparent_28rem),radial-gradient(circle_at_86%_72%,rgba(215,173,75,.16),transparent_28rem)]"></div>
+      <div class="noise-overlay"></div>
+      <div class="container relative z-10 mx-auto px-4">
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-[.82fr_1fr] lg:gap-14">
+          <div class="fade-in lg:sticky lg:top-28 self-start">
+            <span class="inline-flex rounded-full border border-white/15 bg-white/10 px-4 py-2 text-xs font-black uppercase tracking-[.18em] text-lime-200 backdrop-blur-xl">Get a quote</span>
+            <h2 class="mt-5 max-w-2xl text-4xl font-black leading-[1.08] tracking-[-.035em] sm:text-5xl lg:text-6xl text-balance">Tell us about the yard. We’ll give you a fair price.</h2>
+            <p class="mt-6 text-lg leading-8 text-white/74">Send the basics and we’ll get back to you quickly. No pressure, no confusing packages — just straightforward lawn care from three brothers who like working hard.</p>
+            <div class="mt-8 grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
+              {['No pressure', 'Fast response', 'Fair prices'].map((item) => <div class="rounded-2xl border border-white/12 bg-white/[.07] px-5 py-4 font-black backdrop-blur-xl">{item}</div>)}
+            </div>
+          </div>
+          <div id="quote" class="fade-in rounded-[2.2rem] border border-white/16 bg-white/[.08] p-3 shadow-2xl backdrop-blur-2xl sm:p-5">
+            <QuoteForm endpoint={forms.quoteEndpoint} client:load />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <FAQ />
+
+    <section class="relative overflow-hidden bg-[#b9f24a] py-16 text-center text-[#07140c]">
+      <div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(115deg, #07140c 1px, transparent 1px); background-size: 42px 42px;"></div>
+      <div class="container relative z-10 mx-auto px-4 fade-in">
+        <p class="text-sm font-black uppercase tracking-[.22em]">Ready when you are</p>
+        <h2 class="font-display mx-auto mt-3 max-w-3xl text-4xl font-black leading-tight sm:text-6xl">A cleaner lawn is one text away.</h2>
+        <a href={PHONE_HREF} class="mt-7 inline-flex items-center justify-center gap-3 rounded-full bg-[#07140c] px-10 py-4 text-xl font-black text-white shadow-2xl transition hover:-translate-y-1">Call or Text {PHONE_DISPLAY}</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

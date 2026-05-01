@@ -1,155 +1,191 @@
-/*
-  The CSS in this style tag is based off of Bear Blog's default CSS.
-  https://github.com/HermanMartinus/bearblog/blob/297026a877bc2ab2b3bdfbd6b9f7961c350917dd/templates/styles/blog/default.css
-  License MIT: https://github.com/HermanMartinus/bearblog/blob/master/LICENSE.md
- */
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
 
-:root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
-	--black: 15, 18, 25;
-	--gray: 96, 115, 159;
-	--gray-light: 229, 233, 240;
-	--gray-dark: 34, 41, 57;
-	--gray-gradient: rgba(var(--gray-light), 50%), #fff;
-	--box-shadow:
-		0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
-		0 16px 32px rgba(var(--gray), 33%);
-}
-@font-face {
-	font-family: "Atkinson";
-	src: url("/fonts/atkinson-regular.woff") format("woff");
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
-}
-@font-face {
-	font-family: "Atkinson";
-	src: url("/fonts/atkinson-bold.woff") format("woff");
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
-}
-body {
-	font-family: "Atkinson", sans-serif;
-	margin: 0;
-	padding: 0;
-	text-align: left;
-	background: linear-gradient(var(--gray-gradient)) no-repeat;
-	background-size: 100% 600px;
-	word-wrap: break-word;
-	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
-	font-size: 20px;
-	line-height: 1.7;
-}
-main {
-	width: 720px;
-	max-width: calc(100% - 2em);
-	margin: auto;
-	padding: 3em 1em;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	margin: 0 0 0.5rem 0;
-	color: rgb(var(--black));
-	line-height: 1.2;
-}
-h1 {
-	font-size: 3.052em;
-}
-h2 {
-	font-size: 2.441em;
-}
-h3 {
-	font-size: 1.953em;
-}
-h4 {
-	font-size: 1.563em;
-}
-h5 {
-	font-size: 1.25em;
-}
-strong,
-b {
-	font-weight: 700;
-}
-a {
-	color: var(--accent);
-}
-a:hover {
-	color: var(--accent);
-}
-p {
-	margin-bottom: 1em;
-}
-.prose p {
-	margin-bottom: 2em;
-}
-textarea {
-	width: 100%;
-	font-size: 16px;
-}
-input {
-	font-size: 16px;
-}
-table {
-	width: 100%;
-}
-img {
-	max-width: 100%;
-	height: auto;
-	border-radius: 8px;
-}
-code {
-	padding: 2px 5px;
-	background-color: rgb(var(--gray-light));
-	border-radius: 2px;
-}
-pre {
-	padding: 1.5em;
-	border-radius: 8px;
-}
-pre > code {
-	all: unset;
-}
-blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
-	margin: 0px;
-	font-size: 1.333em;
-}
-hr {
-	border: none;
-	border-top: 1px solid rgb(var(--gray-light));
-}
-@media (max-width: 720px) {
-	body {
-		font-size: 18px;
-	}
-	main {
-		padding: 1em;
-	}
+@layer base {
+  :root {
+    --background: #fbf6ea;
+    --foreground: #142016;
+    --cream: #fbf6ea;
+    --cream-2: #efe5d2;
+    --ink: #07140c;
+    --moss: #123b20;
+    --pine: #082513;
+    --leaf: #49b84a;
+    --lime: #b9f24a;
+    --gold: #d7ad4b;
+    --clay: #8b5a36;
+    --font-sans: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-serif: 'Poppins', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; font-size: 18px; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    background:
+      radial-gradient(circle at 8% 2%, rgba(185, 242, 74, .18), transparent 28rem),
+      radial-gradient(circle at 94% 8%, rgba(73, 184, 74, .14), transparent 30rem),
+      linear-gradient(180deg, #fffaf0 0%, #f4ead8 48%, #fffaf0 100%);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a { text-decoration: none; }
+  ::selection { background: rgba(185, 242, 74, .42); color: #07140c; }
+  .font-display { font-family: var(--font-serif); letter-spacing: -0.02em; }
 }
 
-.sr-only {
-	border: 0;
-	padding: 0;
-	margin: 0;
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	overflow: hidden;
-	/* IE6, IE7 - a 0 height clip, off to the bottom right of the visible 1px box */
-	clip: rect(1px 1px 1px 1px);
-	/* maybe deprecated but we need to support legacy browsers */
-	clip: rect(1px, 1px, 1px, 1px);
-	/* modern browsers, clip-path works inwards from each corner */
-	clip-path: inset(50%);
-	/* added line to stop words getting smushed together (as they go onto separate lines and some screen readers do not understand line feeds as a space */
-	white-space: nowrap;
+@layer components {
+  .container { max-width: 1240px; }
+  .noise-overlay {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .11;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  }
+  .stripe-field {
+    background-image:
+      linear-gradient(115deg, rgba(255,255,255,.08) 0 8%, transparent 8% 16%, rgba(185,242,74,.08) 16% 24%, transparent 24% 32%),
+      linear-gradient(180deg, rgba(7,20,12,.96), rgba(8,37,19,.94));
+    background-size: 180px 180px, auto;
+  }
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: .65rem;
+    border: 1px solid rgba(18, 59, 32, .14);
+    border-radius: 999px;
+    background: rgba(255, 250, 240, .74);
+    box-shadow: 0 12px 30px rgba(18, 59, 32, .08), inset 0 1px 0 rgba(255,255,255,.72);
+    padding: .55rem .95rem;
+    color: #123b20;
+    font-size: .72rem;
+    font-weight: 950;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    backdrop-filter: blur(18px);
+  }
+  .section-label::before {
+    content: '';
+    width: .5rem;
+    height: .5rem;
+    border-radius: 999px;
+    background: #b9f24a;
+    box-shadow: 0 0 0 .32rem rgba(185,242,74,.20);
+  }
+  .glass-panel {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,.18);
+    background: linear-gradient(145deg, rgba(255,255,255,.16), rgba(255,255,255,.05));
+    box-shadow: 0 30px 90px rgba(0,0,0,.22), inset 0 1px 0 rgba(255,255,255,.20);
+    backdrop-filter: blur(24px);
+  }
+  .premium-card,
+  .lux-card {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(18, 59, 32, .12);
+    background:
+      linear-gradient(145deg, rgba(255,255,255,.88), rgba(251,246,234,.74)),
+      radial-gradient(circle at top right, rgba(185,242,74,.20), transparent 18rem);
+    box-shadow: 0 28px 80px rgba(18, 59, 32, .13), inset 0 1px 0 rgba(255,255,255,.78);
+  }
+  .premium-card::before,
+  .lux-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(120deg, rgba(255,255,255,.70), transparent 32%, rgba(73,184,74,.08));
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .65rem;
+    border: 1px solid rgba(255,255,255,.26);
+    border-radius: 999px;
+    background: linear-gradient(135deg, #1a8f39 0%, #0d7a32 48%, #063f20 100%);
+    color: #ffffff !important;
+    font-weight: 950;
+    text-shadow: 0 1px 2px rgba(0,0,0,.42);
+    box-shadow: 0 20px 50px rgba(73,184,74,.35), inset 0 1px 0 rgba(255,255,255,.32);
+    transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+  }
+  .btn-primary:hover { transform: translateY(-3px); filter: brightness(1.08) saturate(1.08); box-shadow: 0 30px 68px rgba(73,184,74,.42), inset 0 1px 0 rgba(255,255,255,.46); }
+  .city-services-heading {
+    color: #ffffff !important;
+    text-shadow: 0 2px 18px rgba(0,0,0,.45);
+  }
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .65rem;
+    border: 1px solid rgba(255,255,255,.24);
+    border-radius: 999px;
+    background: rgba(255,255,255,.10);
+    color: #fff;
+    font-weight: 900;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.18);
+    backdrop-filter: blur(20px);
+    transition: transform .22s ease, background .22s ease;
+  }
+  .btn-secondary:hover { transform: translateY(-3px); background: rgba(255,255,255,.18); }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .fade-in, .fade-in-left, .fade-in-right { opacity: 1; transform: none; transition: opacity .75s cubic-bezier(.2,.8,.2,1), transform .75s cubic-bezier(.2,.8,.2,1); }
+  html.js .fade-in { opacity: 0; transform: translateY(34px); }
+  html.js .fade-in-left { opacity: 0; transform: translateX(-44px); }
+  html.js .fade-in-right { opacity: 0; transform: translateX(44px); }
+  html.js .fade-in.visible, html.js .fade-in-left.visible, html.js .fade-in-right.visible { opacity: 1; transform: none; }
+  .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+}
+
+.prose h2, .prose h3 { font-family: var(--font-serif); letter-spacing: -0.015em; }
+
+@keyframes float-slow { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-16px) rotate(1deg); } }
+@keyframes route-pulse { 0%,100% { opacity: .45; transform: scale(.98); } 50% { opacity: 1; transform: scale(1.02); } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .fade-in, .fade-in-left, .fade-in-right { opacity: 1; transform: none; transition: none; }
+  [style*="animation"] { animation: none !important; }
+}
+
+/* Footer social icon visibility - ensure icons are always clearly visible */
+footer .social-icon {
+  color: rgba(255,255,255,.65);
+  transition: color .2s ease;
+}
+footer .social-icon:hover {
+  color: #b9f24a;
+}
+
+/* Icon on dark bg - always visible lime */
+.icon-lime { color: #b9f24a; }
+/* Icon on light bg - always visible moss green */
+.icon-moss { color: #123b20; }
+/* Ensure SVG icons inherit color properly */
+svg { flex-shrink: 0; }
+.quote-area-select,
+.quote-area-select:focus,
+.quote-area-select option {
+  color: #111827 !important;
+  background-color: #ffffff !important;
+  -webkit-text-fill-color: #111827;
+}
+
+.quote-area-select option:checked,
+.quote-area-select option:hover {
+  color: #07140c !important;
+  background-color: #eaffc7 !important;
 }
